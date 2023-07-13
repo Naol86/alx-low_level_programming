@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * main - hello world in c
  * Return: 0
  */
