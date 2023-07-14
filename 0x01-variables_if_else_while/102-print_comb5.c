@@ -43,6 +43,6 @@ if (num == 7 && num1 == 8 && num2 == 9)
 break;
 }
 }
-putchar('\n');
+putchar(10);
 return (0);
 }
