@@ -10,17 +10,18 @@
 int main(void)
 {
 int n;
+int ans;
 
 srand(time(0));
 n = rand() - RAND_MAX / 2;
+printf("Last digit of %d is ", n);
 /* your code goes there */
-int ans;
 ans = abs(n) % 10;
 if (ans > 5)
-printf("Last digit of %d is %d and is greater than 5\n", n, ans);
+printf("%d and is greater than 5\n", ans);
 else if (ans == 0)
-printf("Last digit of %d is %d and is 0\n", n, ans);
+printf("%d ans is 0\n", ans);
 else
-printf("Last digit of %d is %d and is less than 6 and not 0\n", n, ans);
+printf("%d and is less than 6 and not 0\n", ans);
 return (0);
 }
