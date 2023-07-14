@@ -20,7 +20,7 @@ ans = n % 10;
 if (ans > 5)
 printf("%d and is greater than 5\n", ans);
 else if (ans == 0)
-printf("%d ans is 0\n", ans);
+printf("%d and is 0\n", ans);
 else
 printf("%d and is less than 6 and not 0\n", ans);
 return (0);
