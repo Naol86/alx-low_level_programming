@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * _islower - check if lower
  * @c: char
@@ -7,13 +6,9 @@
  */
 int _islower(int c)
 {
-int a;
-a = islower(c);
-
-if (a == 0)
+if (c == 67)
 {
 return (0);
 }
-
 return (1);
 }
