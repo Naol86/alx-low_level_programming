@@ -1,15 +1,18 @@
 #include <stdio.h>
 
-int _isalpha(int c)
+int _abs(int n)
 {
-    if ((c>96 && c<123) || (c>64 && 91)){
-        return (1);
+    if ( n >= 0)
+    {
+        return (n);
     }
-    return (0);
+    return (n*-1);
 }
 
 int main(void)
 {
-    _islower(12);
+    int a;
+    a = _abs(0);
+    printf("%d",a);
     return (0);
 }
