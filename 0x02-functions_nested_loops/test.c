@@ -1,31 +1,20 @@
 #include <stdio.h>
 
-void times_table(void)
+void print_to_98(int n)
 {
-    int i;
-    int j;
-    int ans;
-    int a;
-    int b;
-    for(i=0;i<10;i++){
-        for(j=0;j<10;j++){
-            ans = i *j;
-            a = ans/10;
-            b= ans%10;
-            if (a != 0){
-                putchar(48+a);
-            }
-            if (ans < 10 && j!=9){
-                putchar(' ');
-            }
-            putchar(48+b);
-            if(j!=9){
-                putchar(44);
-                putchar(32);
-            }
+    while (n != 98)
+    {
+        _putchar(n);
+        _putchar(44);
+        _putchar(32);
+        if (n > 98){
+            n--;
         }
-        putchar(10);
+        else{
+            n++;
+        }
     }
+    _putchar(98);
 }
 
 int main(void)

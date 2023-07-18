@@ -21,19 +21,19 @@ a = ans / 10;
 b = ans % 10;
 if (a != 0)
 {
-putchar(48 + a);
+_putchar(48 + a);
 }
 if (ans < 10 && j != 9)
 {
-putchar(' ');
+_putchar(' ');
 }
-putchar(48 + b);
+_putchar(48 + b);
 if (j != 9)
 {
-putchar(44);
-putchar(32);
+_putchar(44);
+_putchar(32);
 }
 }
-putchar(10);
+_putchar(10);
 }
 }
