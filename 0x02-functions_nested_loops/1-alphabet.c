@@ -1,17 +1,4 @@
-#include <stdio.h>
-/**
- * main - print alphabet
- * Return: 0
- */
-
-void print_alphabet(void);
-
-int main(void)
-{
-print_alphabet();
-return (0);
-}
-
+#include "main.h"
 /**
  * print_alphabet - print alphabet function
  * Return: void
