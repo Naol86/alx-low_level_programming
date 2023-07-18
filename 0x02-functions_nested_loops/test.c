@@ -1,14 +1,11 @@
 #include <stdio.h>
 
-int _islower(int c){
-    int a;
-    a = islower(c);
-    
-    if (a==0){
-        return (0);
+int _isalpha(int c)
+{
+    if ((c>96 && c<123) || (c>64 && 91)){
+        return (1);
     }
-
-    return (1);
+    return (0);
 }
 
 int main(void)
