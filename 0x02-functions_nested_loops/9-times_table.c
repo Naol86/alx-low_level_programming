@@ -1,39 +1,47 @@
 #include "main.h"
-
 /**
- * times_table - 9 multiple
+ * times_table - prints small letter
+ *
  * Return: void
+ *
  */
-
 void times_table(void)
 {
 int i;
 int j;
-int ans;
-int a;
-int b;
+
 for (i = 0; i < 10; i++)
 {
 for (j = 0; j < 10; j++)
 {
-ans = i * j;
-a = ans / 10;
-b = ans % 10;
-if (a != 0)
+if ((i * j) > 9)
 {
-_putchar(48 + a);
-}
-if (ans < 10 && j != 9)
+int b = (int)((i * j) % 100) / 10;
+
+_putchar(b + '0');
+_putchar((i * j) % 10 + '0');
+if ((j + 1) != 10)
 {
+_putchar(',');
 _putchar(' ');
 }
-_putchar(48 + b);
-if (j != 9)
+}
+else
 {
-_putchar(44);
-_putchar(32);
+_putchar((i * j) + '0');
+if ((i * (j + 1)) >= 10 && (j + 1) < 10)
+{
+_putchar(',');
+_putchar(' ');
+}
+else if ((j + 1) != 10)
+{
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
 }
 }
-_putchar(10);
+}
+_putchar('\n');
 }
 }
