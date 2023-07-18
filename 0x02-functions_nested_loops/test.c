@@ -1,18 +1,16 @@
 #include <stdio.h>
 
-int _abs(int n)
+int print_last_digit(int n)
 {
-    if ( n >= 0)
-    {
-        return (n);
-    }
-    return (n*-1);
+    int last;
+    last = n%10;
+    return (last);
 }
 
 int main(void)
 {
     int a;
-    a = _abs(0);
+    a = print_last_digit(-1234);
     printf("%d",a);
     return (0);
 }
