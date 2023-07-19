@@ -7,7 +7,7 @@ void fibonacci(void)
 {
 long int a = 1;
 long int b = 1;
-int i = 0;
+int i = 1;
 long int temp;
 for (; i <= 50; i++)
 {
