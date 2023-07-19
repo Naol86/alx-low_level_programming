@@ -31,8 +31,7 @@ void print_times_table(int n)
                 putchar(48+a);
             if (b!=0 || a!=0)
                 putchar(48+b);
-            if ( c!=0 || b!=0)
-                putchar(48+c);
+            putchar(48+c);
             if ( j!= n)
                 putchar(',');
         }
@@ -44,6 +43,6 @@ void print_times_table(int n)
 int main(void)
 {
     int a;
-    print_times_table(15);
+    print_times_table(3);
     return (0);
 }
