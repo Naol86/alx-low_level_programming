@@ -43,6 +43,6 @@ void print_times_table(int n)
 int main(void)
 {
     int a;
-    print_times_table(3);
+    print_times_table(9);
     return (0);
 }
