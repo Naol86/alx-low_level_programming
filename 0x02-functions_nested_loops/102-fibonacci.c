@@ -9,10 +9,10 @@ long int a = 1;
 long int b = 1;
 int i = 0;
 long int temp;
-for (i; i < 50; i++)
+for (; i < 50; i++)
 {
 if (i == 0 || i == 1)
-printf("%d", a);
+printf("%ld", a);
 else if (i > 1)
 {
 printf("%ld", a + b);
