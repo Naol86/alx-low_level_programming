@@ -39,8 +39,6 @@ _putchar(48 + b);
 _putchar(48 + c);
 if (j != n)
 _putchar(',');
-if (j != n)
-_putchar(',');
 }
 _putchar('\n');
 }
