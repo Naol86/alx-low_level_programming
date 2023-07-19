@@ -22,3 +22,14 @@ sum += i;
 }
 printf("%d\n", sum);
 }
+
+/**
+ * main - starting point
+ * Return: 0
+ */
+
+int main(void)
+{
+print_sum();
+return (0);
+}
