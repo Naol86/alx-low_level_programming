@@ -20,5 +20,5 @@ else if (i % 5 == 0)
 sum += i;
 }
 }
-printf("d%\n", sum);
+printf("%d\n", sum);
 }
