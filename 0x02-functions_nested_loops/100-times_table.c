@@ -33,13 +33,13 @@ space = 4;
 for (; space < 4; space++)
 _putchar(' ');
 if (a != 0)
-putchar(48 + a);
+_putchar(48 + a);
 if (b != 0 || a != 0)
-putchar(48 + b);
+_putchar(48 + b);
 if (c != 0 || b != 0)
-putchar(48 + c);
+_putchar(48 + c);
 if (j != n)
-putchar(',');
+_putchar(',');
 if (j != n)
 _putchar(',');
 }
