@@ -9,7 +9,7 @@ int x;
 int y;
 for (y = 0; y < 10; y++)
 {
-for (i = 0; i < 14; i++)
+for (i = 0; i < 15; i++)
 {
 if (i > 9)
 _putchar(49);
