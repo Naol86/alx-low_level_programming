@@ -14,4 +14,6 @@ _putchar(32);
 _putchar(92);
 _putchar(10);
 }
+if (n <= 0)
+_putchar(10);
 }
