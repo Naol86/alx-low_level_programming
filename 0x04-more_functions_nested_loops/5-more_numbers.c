@@ -4,12 +4,12 @@
  */
 void more_numbers(void)
 {
-int i = 0;
+int i;
 int x;
-int y = 0;
-for (; y < 10; y++)
+int y;
+for (y = 0; y < 10; y++)
 {
-for (; i < 14; i++)
+for (i = 0; i < 14; i++)
 {
 if (i > 9)
 _putchar(49);
