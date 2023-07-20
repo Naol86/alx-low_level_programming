@@ -3,26 +3,24 @@
 /**
  * more_numbers - printing more numbers
  */
-void more_numbers(void)
+void print_square(int size)
 {
     int i;
-    int x;
-    int y;
-    for (y = 0; y < 10; y++)
+    int j;
+    for (i = 0; i < size; i++)
     {
-        for (i = 0; i < 15; i++)
+        for (j = 0; j < size; j++)
         {
-            if (i > 9)
-                putchar(49);
-            x = i % 10;
-            putchar(48 + x);
+            putchar('#');
         }
         putchar(10);
     }
+    if (size == 0)
+    putchar(10);
 }
 
 int main(void)
 {
-    more_numbers();
+    print_square(0);
     return (0);
 }

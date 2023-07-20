@@ -1,9 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * FizzBuzz - printing fizz buzz
+ * main - printing fizz buzz
+ * Return: 0
  */
-void FizzBuzz(void)
+int  main(void)
 {
 int i;
 for (i = 1; i < 101; i++)
@@ -18,4 +19,5 @@ if (i != 100)
 printf("%s", " ");
 }
 putchar(10);
+return (0);
 }

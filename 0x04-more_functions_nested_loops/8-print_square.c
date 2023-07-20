@@ -15,4 +15,6 @@ _putchar('#');
 }
 _putchar(10);
 }
+if (size == 0)
+_putchar(10);
 }
