@@ -7,7 +7,7 @@ void print_numbers(void)
 int i;
 for (i = 0; i < 10; i++)
 {
-printf("%d", i);
+_putchar(48 + i);
 }
-printf("%s", '\n');
+_putchar(10);
 }
