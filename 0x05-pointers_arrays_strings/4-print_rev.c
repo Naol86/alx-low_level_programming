@@ -13,9 +13,11 @@ while (*(s + len) != '\0')
 len++;
 }
 int i;
+char temp;
 for (i = len - 1; i >= 0; i--)
 {
-_putchar(*(s + i));
+temp = *(s + i);
+_putchar(temp);
 }
 _putchar(10);
 }
