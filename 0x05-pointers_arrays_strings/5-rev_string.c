@@ -7,12 +7,14 @@
 
 void rev_string(char *s)
 {
-int Max = 0;
+int Max;
+Max = 0;
 while (*(s + Max) != '\0')
 {
 Max++;
 }
-int Min = 0;
+int Min;
+Min = 0;
 Max--;
 while (Min < Max)
 {
