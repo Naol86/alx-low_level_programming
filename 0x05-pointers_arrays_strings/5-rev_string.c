@@ -8,13 +8,13 @@
 void rev_string(char *s)
 {
 int Max;
+int Min;
+Min = 0;
 Max = 0;
 while (*(s + Max) != '\0')
 {
 Max++;
 }
-int Min;
-Min = 0;
 Max--;
 while (Min < Max)
 {
