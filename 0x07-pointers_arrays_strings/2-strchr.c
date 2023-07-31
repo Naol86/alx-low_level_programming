@@ -1,22 +1,25 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * _strchr - function that prints the rest start from c
- * @s: array
- * @c: char
- * Return: char*
+ * _strchr - returns the pointer to the first occurence in memory
+ *@s: the array
+ *@c: charcter that is serched
+ *Return: the pointer to that array
  */
-
 char *_strchr(char *s, char c)
 {
-int i = 0;
-while (s[i] != '\0')
+unsigned int i;
+
+for (i = 0; *(s + i) != '\0'; i++)
 {
-if (s[i] == c)
+if (*(s + i) == c)
 {
-return (s + i);
+return ((s + i));
 }
-i++;
+if (*(s + i) == 0)
+{
+return (0);
+}
 }
 return (0);
 }
