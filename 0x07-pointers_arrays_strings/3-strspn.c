@@ -1,25 +1,27 @@
 #include "main.h"
-#include <stdio.h>
-/**
- * _strchr - returns the pointer to the first occurence in memory
- *@s: the array
- *@c: charcter that is serched
- *Return: the pointer to that array
- */
-char *_strchr(char *s, char c)
-{
-unsigned int i;
 
-for (i = 0; *(s + i) != '\0'; i++)
+/**
+ * _strspn - a function that gets the length of a prefix substring
+ * @s: the initial segment of
+ * @accept: which consist only of bytes from
+ * Return: the number of bytes
+ */
+unsigned int _strspn(char *s, char *accept)
 {
-if (*(s + i) == c)
+int z = 0, x, y;
+
+for (x = 0; s[x] != '\0'; x++)
 {
-return ((s + i));
-}
-if (*(s + i) == 0)
+if (s[x] != 32)
 {
-return (NULL);
+for (y = 0; accept[y] != '\0'; y++)
+{
+if (s[x] == accept[y])
+z++;
 }
 }
-return (NULL);
+else
+return (z);
+}
+return (z);
 }
