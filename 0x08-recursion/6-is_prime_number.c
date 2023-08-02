@@ -15,12 +15,11 @@ if (n < 2)
 {
 return (0);
 }
+if (n == 2)
+return (1);
 sqrt = n / 2;
-if (sqrt != -1)
-{
 ans = test_prime(n, sqrt, 2);
 return (ans);
-}
 }
 
 /**
