@@ -37,6 +37,6 @@ return (-1);
 else
 {
 z++;
-test(y, z);
+return (test(y, z));
 }
 }
