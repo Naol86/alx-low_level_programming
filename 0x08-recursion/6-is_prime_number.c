@@ -9,21 +9,18 @@ int test_prime(int num, int index, int start);
 
 int is_prime_number(int n)
 {
-int temp = n;
 int sqrt;
 int ans;
 if (n < 2)
 {
 return (0);
 }
-sqrt = temp / 2;
+sqrt = n / 2;
 if (sqrt != -1)
 {
 ans = test_prime(n, sqrt, 2);
 return (ans);
 }
-else
-temp++;
 }
 
 /**
