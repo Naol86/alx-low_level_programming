@@ -3,15 +3,16 @@
 /**
  * length - find length of a string
  * @s: *char
+ * @len: int
  * Return: int
  */
 
-int length(char *s)
+int length(char *s,int len)
 {
-int x = 0;
-while (s[x] != '\0')
-x++;
-return (x);
+if (s[len]=='\0')
+return (len);
+len++;
+return (length(s,len));
 }
 
 /**
@@ -41,7 +42,7 @@ return (check(s, start, end));
  */
 int is_palindrome(char *s)
 {
-int len = length(s) - 1;
+int len = length(s,0) - 1;
 int ans = check(s, 0, len);
 return (ans);
 }
