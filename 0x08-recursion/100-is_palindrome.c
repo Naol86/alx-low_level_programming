@@ -42,7 +42,6 @@ return (check(s, start, end));
 int is_palindrome(char *s)
 {
 int len = length(s) - 1;
-int mid = len / 2;
 int ans = check(s, 0, len);
 return (ans);
 }
