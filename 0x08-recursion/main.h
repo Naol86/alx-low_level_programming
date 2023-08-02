@@ -10,3 +10,4 @@ int is_prime_number(int n);
 int test_prime(int num, int index, int start);
 int is_palindrome(char *s);
 int length(char *s,int len);
+int wildcmp(char *s1, char *s2);
