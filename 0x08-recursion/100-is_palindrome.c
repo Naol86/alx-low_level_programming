@@ -7,12 +7,12 @@
  * Return: int
  */
 
-int length(char *s,int len)
+int length(char *s, int len)
 {
-if (s[len]=='\0')
+if (s[len] == '\0')
 return (len);
 len++;
-return (length(s,len));
+return (length(s, len));
 }
 
 /**
@@ -42,7 +42,7 @@ return (check(s, start, end));
  */
 int is_palindrome(char *s)
 {
-int len = length(s,0) - 1;
+int len = length(s, 0) - 1;
 int ans = check(s, 0, len);
 return (ans);
 }
