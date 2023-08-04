@@ -11,21 +11,22 @@
 int main(int argc, char *argv[])
 {
 int i;
+int j;
 int temp;
 int ans = 0;
 for (i = 1; i < argc; i++)
 {
 temp = atoi(argv[i]);
-if (temp == 0 && *argv[i] != '0')
+for (j = 0; argv[i][j] != '\0'; j++)
+{
+if (argv[i][j] < '0' || argv[i][j] > '9')
 {
 printf("Error\n");
 return (0);
 }
+}
 ans += temp;
 }
-if (argc > 1)
 printf("%d\n", ans);
-else
-printf("%d\n", 0);
 return (0);
 }
