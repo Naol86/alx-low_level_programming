@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * is_digit - checks if a string contains a non-digit
+ * is_digit - checks if a string contains a non-digit char
  * @s: string to be evaluated
  *
  * Return: 0 if a non-digit is found, 1 otherwise
@@ -22,7 +22,7 @@ return (1);
 }
 
 /**
- * _strlen - returns the length
+ * _strlen - returns the length of a string
  * @s: string to evaluate
  *
  * Return: the length of the string
@@ -39,8 +39,8 @@ return (i);
 }
 
 /**
- * errors - handles errors for main
- */
+* errors - handles errors for main
+*/
 void errors(void)
 {
 printf("Error\n");
@@ -48,12 +48,12 @@ exit(98);
 }
 
 /**
- * main - multiplies two numbers
- * @argc: number of arguments
- * @argv: array of arguments
- *
- * Return: always 0 (Success)
- */
+* main - multiplies two positive numbers
+* @argc: number of arguments
+* @argv: array of arguments
+*
+* Return: always 0 (Success)
+*/
 int main(int argc, char *argv[])
 {
 char *s1, *s2;
