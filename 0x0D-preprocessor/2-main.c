@@ -2,13 +2,11 @@
 
 /**
  * main - print file name
- * @argc: int
- * @argv: parameter
  * Return: 0
  */
 
-int main(int argc, char *argv)
+int main(void)
 {
-printf("%s", __FILE__);
+printf("%s\n", __FILE__);
 return (0);
 }
