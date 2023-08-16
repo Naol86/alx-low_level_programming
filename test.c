@@ -1,8 +1,12 @@
 #include <stdio.h>
 
-int main(int args,char *argv[])
+void function(int x)
 {
-    printf("%d\n",args);
-    printf("%s\n",argv[args]);
-    return (0);
+    printf("the value of x is %d\n",x);
+}
+
+int main(void)
+{
+    void (*test_pointer)(int) = &function ;
+    test_pointer(10);
 }
