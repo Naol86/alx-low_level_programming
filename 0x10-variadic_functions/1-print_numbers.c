@@ -10,7 +10,7 @@
  */
 int power(int x)
 {
-int po = 1, k;
+unsigned int po = 1, k;
 for (k = 0; k < (x); k++)
 po *= 10;
 return (po);
@@ -21,7 +21,7 @@ return (po);
  */
 void print_digit(int x)
 {
-int digit, temp = x, j, ans, count = 1;
+unsigned int digit, temp = x, j, ans, count = 1;
 while (temp > 9)
 {
 digit = temp % 10;
