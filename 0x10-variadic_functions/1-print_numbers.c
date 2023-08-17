@@ -8,10 +8,10 @@
  * @x: 10 pow x
  * Return: int
  */
-int power(int x)
+int power(unsigned int x)
 {
 unsigned int po = 1, k;
-for (k = 0; k < (x); k++)
+for (k = 0; k < x; k++)
 po *= 10;
 return (po);
 }
@@ -21,10 +21,13 @@ return (po);
  */
 void print_digit(int x)
 {
-unsigned int digit, temp = x, j, ans, count = 1;
+unsigned int temp = x;
+unsigned int j;
+unsigned int ans;
+unsigned int count = 1;
+
 while (temp > 9)
 {
-digit = temp % 10;
 count += 1;
 temp /= 10;
 }
@@ -42,19 +45,20 @@ _putchar('0' + ans);
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-int temp;
+unsigned int i;
+double temp;
 va_list list;
 
 va_start(list, n);
 
-for (int i = 0; i < n; i++)
+for (i = 0; i < n; i++)
 {
 temp = va_arg(list, int);
 if (temp < 0)
 _putchar('-');
-temp = abs(temp);
+temp = -1*temp;
 print_digit(temp);
-if (i != n - 1)
+if (i != n - 1 && separator!=NULL)
 {
 _putchar(separator[0]);
 _putchar(separator[1]);
