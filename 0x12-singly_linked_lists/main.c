@@ -11,24 +11,36 @@
 int main(void)
 {
     list_t *head;
-    list_t *new;
-    list_t hello = {"World", 5, NULL};
-    size_t n;
 
-    head = &hello;
-    new = malloc(sizeof(list_t));
-    if (new == NULL)
-    {
-        printf("Error\n");
-        return (1);
-    }
-    new->str = strdup("Hello");
-    new->len = 5;
-    new->next = head;
-    head = new;
-    n = list_len(head);
-    printf("-> %lu elements\n", n);
-    free(new->str);
-    free(new);
+    head = NULL;
+    add_node_end(&head, "Anne");
+    add_node_end(&head, "Colton");
+    add_node_end(&head, "Corbin");
+    add_node_end(&head, "Daniel");
+    add_node_end(&head, "Danton");
+    add_node_end(&head, "David");
+    add_node_end(&head, "Gary");
+    add_node_end(&head, "Holden");
+    add_node_end(&head, "Ian");
+    add_node_end(&head, "Ian");
+    add_node_end(&head, "Jay");
+    add_node_end(&head, "Jennie");
+    add_node_end(&head, "Jimmy");
+    add_node_end(&head, "Justin");
+    add_node_end(&head, "Kalson");
+    add_node_end(&head, "Kina");
+    add_node_end(&head, "Matthew");
+    add_node_end(&head, "Max");
+    add_node_end(&head, "Michael");
+    add_node_end(&head, "Ntuj");
+    add_node_end(&head, "Philip");
+    add_node_end(&head, "Richard");
+    add_node_end(&head, "Samantha");
+    add_node_end(&head, "Stuart");
+    add_node_end(&head, "Swati");
+    add_node_end(&head, "Timothy");
+    add_node_end(&head, "Victor");
+    add_node_end(&head, "Walton");
+    print_list(head);
     return (0);
 }
