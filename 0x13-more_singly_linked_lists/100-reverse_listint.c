@@ -8,9 +8,9 @@
 
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *bottom, *top;
+	listint_t *top, *bottom;
 
-	if (*head == NULL)
+	if (head == NULL || *head == NULL)
 		return (NULL);
 
 	bottom = NULL;
@@ -19,10 +19,11 @@ listint_t *reverse_listint(listint_t **head)
 	{
 		top = (*head)->next;
 		(*head)->next = bottom;
-		top = *head;
-		*head = bottom;
+		bottom = *head;
+		*head = top;
 	}
 
 	(*head)->next = bottom;
+
 	return (*head);
 }
