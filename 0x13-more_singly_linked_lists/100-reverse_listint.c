@@ -1,30 +1,6 @@
 #include "lists.h"
 
 /**
- * last_node - get last node int
- * @head: head of linked list
- * Return: int
- */
-
-int last_node(listint_t **head)
-{
-	int temp;
-
-	if (*head == NULL)
-		return (-1);
-
-	if ((*head)->next == NULL)
-	{
-		temp = (*head)->n;
-		free(*head);
-		*head = NULL;
-		return (temp);
-	}
-
-	return (last_node(&((*head)->next)));
-}
-
-/**
  * reverse_listint - reverse linked list
  * @head: head of the list
  * Return: listint_t*
@@ -32,16 +8,21 @@ int last_node(listint_t **head)
 
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *new_head;
-	int temp;
+	listint_t *bottom, *top;
 
-	new_head = NULL;
+	if (*head == NULL)
+		return (NULL);
 
-	while (*head != NULL)
+	bottom = NULL;
+
+	while ((*head)->next != NULL)
 	{
-		temp = last_node(&(*head));
-		add_nodeint_end(&new_head, temp);
+		top = (*head)->next;
+		(*head)->next = bottom;
+		top = *head;
+		*head = bottom;
 	}
 
-	return (new_head);
+	(*head)->next = bottom;
+	return (*head);
 }
