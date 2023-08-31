@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * get_bit - Get the bit object
@@ -9,26 +10,13 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int temp, count = 0;
+	unsigned int temp = n | (1 << index);
 
-	temp = 2 << (index - 1);
-
-	if (temp > n)
+	if (index > 32)
 		return (-1);
 
-	while (n != 0)
-	{
-		if (n < (unsigned long int)(2 << count))
-		{
-			n -= 2 << (count - 1);
-			if (count == index)
-				return (1);
-			if (count < index)
-				return (0);
-			count = 0;
-			continue;
-		}
-		count++;
-	}
+	if (temp <= n)
+		return (1);
+
 	return (0);
 }
