@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * length - length of string
@@ -21,6 +20,7 @@ unsigned int length(const char *s)
  * @b: binary string
  * Return: unsigned int
  */
+
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int decimal = 0, len = length(b), i = 0;
@@ -32,7 +32,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
-		if (b[i]=='0')
+		if (b[i] == '0')
 		{
 			i++;
 			continue;
