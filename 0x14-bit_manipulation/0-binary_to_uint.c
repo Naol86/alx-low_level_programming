@@ -54,7 +54,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[i] == '0')
 			continue;
-		decimal += power(2, count - i - 1);
+		decimal += 1 << (count - 1 - i);
 	}
 	return (decimal);
 }
