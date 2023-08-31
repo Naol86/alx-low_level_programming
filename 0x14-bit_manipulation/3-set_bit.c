@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+ * set_bit - Set the bit object
+ * @n: long int
+ * @index: index
+ * Return: int
+ */
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
