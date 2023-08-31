@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * length - length of string
@@ -11,11 +12,7 @@ unsigned int length(const char *s)
 	unsigned int count = 0;
 
 	while (s[count] != '\0')
-	{
-		if (s[count] != '0' && s[count] != '1')
-			return (0);
 		count++;
-	}
 	return (count);
 }
 
@@ -26,17 +23,23 @@ unsigned int length(const char *s)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int count = length(b);
-	unsigned int decimal = 0, i;
+	unsigned int decimal = 0, len = length(b), i = 0;
 
-	if (count < 1)
+	if (!b)
 		return (0);
 
-	for (i = 0; i < count; i++)
+	while (b[i] && len > i)
 	{
-		if (b[i] == '0')
+		if (b[i] != '0' && b[i] != '1')
+			return (0);
+		if (b[i]=='0')
+		{
+			i++;
 			continue;
-		decimal += 1 << (count - 1 - i);
+		}
+
+		decimal += 1 << (len - i - 1);
+		i++;
 	}
 	return (decimal);
 }
