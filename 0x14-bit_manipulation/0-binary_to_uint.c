@@ -1,24 +1,6 @@
 #include "main.h"
 
 /**
- * power - power of x to y
- * @x: base int
- * @y: expo unsigned int
- * Return: unsigned int
- */
-
-unsigned int power(int x, unsigned int y)
-{
-	unsigned int count = 1, i;
-
-	for (i = 0; i < y; i++)
-	{
-		count *= x;
-	}
-	return (count);
-}
-
-/**
  * length - length of string
  * @s: string
  * Return: unsigned int
