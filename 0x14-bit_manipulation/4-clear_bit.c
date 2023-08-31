@@ -9,7 +9,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int temp = 1 << index, ans;
 
-	if (index > 32 || temp > *n)
+	if (index > 64 || temp > *n)
 		return (-1);
 
 	ans = (*n | temp) - temp;
