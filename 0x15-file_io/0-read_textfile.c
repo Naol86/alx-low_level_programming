@@ -18,12 +18,18 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	file = open(filename, O_RDONLY);
 
 	if (file < 0)
+	{
+		close(file);
 		return (0);
+	}
 
 	str = malloc(sizeof(char) * letters);
 
 	if (!str)
+	{
+		free(str);
 		return (0);
+	}
 
 	sizeof_char = read(file, str, letters);
 
@@ -33,8 +39,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(str);
 		return (0);
 	}
-
-	str[sizeof_char] = '\0';
 
 	post = write(STDOUT_FILENO, str, sizeof_char);
 
