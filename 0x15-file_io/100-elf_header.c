@@ -17,6 +17,10 @@ void printType(unsigned int e_type, unsigned char *e_ident);
 void print_entry(unsigned long int e_entry, unsigned char *e_ident);
 void close_elf(int elf);
 
+/**
+ * checkElf - check function
+ * @e_ident: unsigned char
+ */
 void checkElf(unsigned char *e_ident)
 {
 	int index;
@@ -33,7 +37,10 @@ void checkElf(unsigned char *e_ident)
 		}
 	}
 }
-
+/**
+ * printMagic - magic function
+ * @e_ident: unsigned char
+ */
 void printMagic(unsigned char *e_ident)
 {
 	int index;
@@ -50,7 +57,10 @@ void printMagic(unsigned char *e_ident)
 			printf(" ");
 	}
 }
-
+/**
+ * printClass - print class function
+ * @e_ident: unsigned char
+ */
 void printClass(unsigned char *e_ident)
 {
 	printf("  Class:                             ");
@@ -70,7 +80,10 @@ void printClass(unsigned char *e_ident)
 		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
-
+/**
+ * printData - print data function
+ * @e_ident: unsigned char
+ */
 void printData(unsigned char *e_ident)
 {
 	printf("  Data:                              ");
@@ -90,7 +103,10 @@ void printData(unsigned char *e_ident)
 		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
-
+/**
+ * printVersion - printverino function
+ * @e_ident: unsigned char
+ */
 void printVersion(unsigned char *e_ident)
 {
 	printf("  Version:                           %d",
@@ -106,7 +122,10 @@ void printVersion(unsigned char *e_ident)
 		break;
 	}
 }
-
+/**
+ * printOsAbi - os abi
+ * @e_ident: unsigned char
+ */
 void printOsAbi(unsigned char *e_ident)
 {
 	printf("  OS/ABI:                            ");
@@ -147,13 +166,20 @@ void printOsAbi(unsigned char *e_ident)
 		printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
 }
-
+/**
+ * print_Abi - print Abi
+ * @e_ident: unsigned char
+ */
 void print_Abi(unsigned char *e_ident)
 {
 	printf("  ABI Version:                       %d\n",
 		   e_ident[EI_ABIVERSION]);
 }
-
+/**
+ * printType - print type
+ * @e_type: unsigned long int
+ * @e_ident: unsigned long int
+ */
 void printType(unsigned int e_type, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
@@ -182,7 +208,11 @@ void printType(unsigned int e_type, unsigned char *e_ident)
 		printf("<unknown: %x>\n", e_type);
 	}
 }
-
+/**
+ * print_entry - function to check entry
+ * @e_entry: unsigned long int
+ * @e_ident: unsigned long int
+ */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
 	printf("  Entry point address:               ");
@@ -200,7 +230,10 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 	else
 		printf("%#lx\n", e_entry);
 }
-
+/**
+ * close_elf - close elf function
+ * @elf: int
+ */
 void close_elf(int elf)
 {
 	if (close(elf) == -1)
@@ -210,7 +243,12 @@ void close_elf(int elf)
 		exit(98);
 	}
 }
-
+/**
+ * main - main function
+ * @argc: int
+ * @argv: array
+ * Return: int
+ */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	Elf64_Ehdr *header;
