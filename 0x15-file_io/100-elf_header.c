@@ -6,18 +6,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void checkCon(unsigned char *e_ident);
-void printMagic(unsigned char *e_ident);
-void printClass(unsigned char *e_ident);
-void printData(unsigned char *e_ident);
-void printVersion(unsigned char *e_ident);
-void printAb(unsigned char *e_ident);
-void printOsab(unsigned char *e_ident);
-void printType(unsigned int e_type, unsigned char *e_ident);
-void printEntery(unsigned long int e_entry, unsigned char *e_ident);
-void closeElf(int elf);
+void check_elf(unsigned char *e_ident);
+void print_magic(unsigned char *e_ident);
+void print_class(unsigned char *e_ident);
+void print_data(unsigned char *e_ident);
+void print_version(unsigned char *e_ident);
+void print_abi(unsigned char *e_ident);
+void print_osabi(unsigned char *e_ident);
+void print_type(unsigned int e_type, unsigned char *e_ident);
+void print_entry(unsigned long int e_entry, unsigned char *e_ident);
+void close_elf(int elf);
 
-void checkCon(unsigned char *e_ident)
+void check_elf(unsigned char *e_ident)
 {
 	int index;
 
@@ -34,11 +34,11 @@ void checkCon(unsigned char *e_ident)
 	}
 }
 
-void printMagic(unsigned char *e_ident)
+void print_magic(unsigned char *e_ident)
 {
 	int index;
 
-	printf(" Magic: ");
+	printf("  Magic:   ");
 
 	for (index = 0; index < EI_NIDENT; index++)
 	{
@@ -51,9 +51,9 @@ void printMagic(unsigned char *e_ident)
 	}
 }
 
-void printClass(unsigned char *e_ident)
+void print_class(unsigned char *e_ident)
 {
-	printf(" Class: ");
+	printf("  Class:                             ");
 
 	switch (e_ident[EI_CLASS])
 	{
@@ -71,9 +71,9 @@ void printClass(unsigned char *e_ident)
 	}
 }
 
-void printData(unsigned char *e_ident)
+void print_data(unsigned char *e_ident)
 {
-	printf(" Data: ");
+	printf("  Data:                              ");
 
 	switch (e_ident[EI_DATA])
 	{
@@ -91,9 +91,9 @@ void printData(unsigned char *e_ident)
 	}
 }
 
-void printVersion(unsigned char *e_ident)
+void print_version(unsigned char *e_ident)
 {
-	printf(" Version: %d",
+	printf("  Version:                           %d",
 		   e_ident[EI_VERSION]);
 
 	switch (e_ident[EI_VERSION])
@@ -107,9 +107,9 @@ void printVersion(unsigned char *e_ident)
 	}
 }
 
-void printOsab(unsigned char *e_ident)
+void print_osabi(unsigned char *e_ident)
 {
-	printf(" OS/ABI: ");
+	printf("  OS/ABI:                            ");
 
 	switch (e_ident[EI_OSABI])
 	{
@@ -148,18 +148,18 @@ void printOsab(unsigned char *e_ident)
 	}
 }
 
-void printAb(unsigned char *e_ident)
+void print_abi(unsigned char *e_ident)
 {
-	printf(" ABI Version: %d\n",
+	printf("  ABI Version:                       %d\n",
 		   e_ident[EI_ABIVERSION]);
 }
 
-void printType(unsigned int e_type, unsigned char *e_ident)
+void print_type(unsigned int e_type, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 
-	printf(" Type: ");
+	printf("  Type:                              ");
 
 	switch (e_type)
 	{
@@ -183,9 +183,9 @@ void printType(unsigned int e_type, unsigned char *e_ident)
 	}
 }
 
-void printEntery(unsigned long int e_entry, unsigned char *e_ident)
+void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
-	printf(" Entry point address: ");
+	printf("  Entry point address:               ");
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
@@ -201,7 +201,7 @@ void printEntery(unsigned long int e_entry, unsigned char *e_ident)
 		printf("%#lx\n", e_entry);
 }
 
-void closeElf(int elf)
+void close_elf(int elf)
 {
 	if (close(elf) == -1)
 	{
@@ -225,7 +225,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	header = malloc(sizeof(Elf64_Ehdr));
 	if (header == NULL)
 	{
-		closeElf(o);
+		close_elf(o);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
@@ -233,23 +233,23 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	if (r == -1)
 	{
 		free(header);
-		closeElf(o);
+		close_elf(o);
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
 
-	checkCon(header->e_ident);
+	check_elf(header->e_ident);
 	printf("ELF Header:\n");
-	printMagic(header->e_ident);
-	printClass(header->e_ident);
-	printData(header->e_ident);
-	printVersion(header->e_ident);
-	printOsab(header->e_ident);
-	printAb(header->e_ident);
-	printType(header->e_type, header->e_ident);
-	printEntery(header->e_entry, header->e_ident);
+	print_magic(header->e_ident);
+	print_class(header->e_ident);
+	print_data(header->e_ident);
+	print_version(header->e_ident);
+	print_osabi(header->e_ident);
+	print_abi(header->e_ident);
+	print_type(header->e_type, header->e_ident);
+	print_entry(header->e_entry, header->e_ident);
 
 	free(header);
-	closeElf(o);
+	close_elf(o);
 	return (0);
 }
