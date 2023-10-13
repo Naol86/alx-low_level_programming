@@ -8,8 +8,8 @@
 
 size_t print_dlistint(const dlistint_t *h)
 {
-	dlistint_t *current;
-	unsigned int count = 0;
+	const dlistint_t *current;
+	size_t count = 0;
 
 	current = h;
 	if (current != NULL)
@@ -18,7 +18,7 @@ size_t print_dlistint(const dlistint_t *h)
 			printf("%d\n", current->n);
 			current = current->next;
 			count++;
-		} while (current != h);
+		} while (current);
 	}
 	return (count);
 }
