@@ -60,7 +60,7 @@ int div(int a, int b)
  * @b: int b
  * Return: int
  */
-int mode(int a, int b)
+int mod(int a, int b)
 {
 	if (b > 0) {
         return (a % b);
