@@ -47,9 +47,11 @@ int mul(int a, int b)
  */
 int div(int a, int b)
 {
-	int ans;
-	ans = a / b;
-	return (ans);
+	if (b != 0) {
+        return (a / b);
+    } else {
+        return (0);
+    }
 }
 
 /**
@@ -60,7 +62,9 @@ int div(int a, int b)
  */
 int mode(int a, int b)
 {
-	int ans;
-	ans = a % b;
-	return (ans);
+	if (b != 0) {
+        return (a % b);
+    } else {
+        return (0);
+    }
 }
